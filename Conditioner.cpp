@@ -31,6 +31,7 @@ void Conditioner::setTemperature(int temperature)
 			while (this->room->getTemperature() != temperature)
 			{
 				//this->room.increaseTemperature();
+				this->temperature = temperature;
 				this->room->temperature++;
 				std::cout << "Temperature: " << this->room->getTemperature() << "\n";
 			}
@@ -40,6 +41,7 @@ void Conditioner::setTemperature(int temperature)
 			while (this->room->getTemperature() != temperature)
 			{
 				//this->room.decreaseTemperature();
+				this->temperature = temperature;
 				this->room->temperature--;
 				std::cout << "Temperature: " << this->room->getTemperature() << "\n";
 			}
