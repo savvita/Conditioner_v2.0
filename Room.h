@@ -1,4 +1,7 @@
 #pragma once
+
+class Conditioner;
+
 class Room
 {
 private:
@@ -6,12 +9,16 @@ private:
 
 public:
 	explicit Room(int temperature);
+	explicit Room(const Room& room);
+
 	inline int getTemperature() const
 	{
 		return this->temperature;
 	}
 
-	void increaseTemperature();
-	void decreaseTemperature();
+	//void increaseTemperature();
+	//void decreaseTemperature();
+
+	friend class Conditioner;
 };
 

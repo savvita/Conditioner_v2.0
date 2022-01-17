@@ -6,11 +6,12 @@ class Conditioner
 private:
 	int temperature;
 	bool state;
-	Room room;
+	Room* room;
 
 public:
 	Conditioner();
 	explicit Conditioner(int currentTemperature);
+	explicit Conditioner(Room& room);
 
 	void turnOn();
 	void turnOff();
@@ -19,7 +20,7 @@ public:
 
 	inline int getCurrentTemperature() const
 	{
-		return this->room.getTemperature();
+		return this->room->getTemperature();
 	}
 };
 

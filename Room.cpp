@@ -4,12 +4,16 @@ Room::Room(int temperature) :temperature{ temperature }
 {
 }
 
-void Room::increaseTemperature()
+Room::Room(const Room& room) : temperature{ room.temperature }
 {
-    this->temperature++;
 }
 
-void Room::decreaseTemperature()
-{
-    this->temperature--;
-}
+//void Room::increaseTemperature()
+//{
+//    this->temperature++;
+//}
+//
+//void Room::decreaseTemperature()
+//{
+//    this->temperature--;
+//}

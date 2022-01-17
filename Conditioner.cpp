@@ -1,10 +1,14 @@
 #include "Conditioner.h"
 
-Conditioner::Conditioner() :temperature{ 20 }, state{ false }, room{ Room(20) }
+Conditioner::Conditioner() :temperature{ 20 }, state{ false }, room{ new Room(20) }
 {
 }
 
-Conditioner::Conditioner(int currentTemperature) : temperature{ currentTemperature }, state{ false }, room{ Room(currentTemperature) }
+Conditioner::Conditioner(int currentTemperature) : temperature{ currentTemperature }, state{ false }, room{ new Room(currentTemperature) }
+{
+}
+
+Conditioner::Conditioner(Room& room) : temperature{ room.temperature }, state{ false }, room{ &room }
 {
 }
 
@@ -22,20 +26,22 @@ void Conditioner::setTemperature(int temperature)
 {
 	if (this->state)
 	{
-		if (this->room.getTemperature() < temperature)
+		if (this->room->getTemperature() < temperature)
 		{
-			while (this->room.getTemperature() != temperature)
+			while (this->room->getTemperature() != temperature)
 			{
-				this->room.increaseTemperature();
-				std::cout << "Temperature: " << this->room.getTemperature() << "\n";
+				//this->room.increaseTemperature();
+				this->room->temperature++;
+				std::cout << "Temperature: " << this->room->getTemperature() << "\n";
 			}
 		}
 		else
 		{
-			while (this->room.getTemperature() != temperature)
+			while (this->room->getTemperature() != temperature)
 			{
-				this->room.decreaseTemperature();
-				std::cout << "Temperature: " << this->room.getTemperature() << "\n";
+				//this->room.decreaseTemperature();
+				this->room->temperature--;
+				std::cout << "Temperature: " << this->room->getTemperature() << "\n";
 			}
 		}
 	}
