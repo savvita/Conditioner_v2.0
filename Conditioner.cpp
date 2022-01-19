@@ -1,13 +1,5 @@
 #include "Conditioner.h"
 
-Conditioner::Conditioner() :temperature{ 20 }, state{ false }, room{ new Room(20) }
-{
-}
-
-Conditioner::Conditioner(int currentTemperature) : temperature{ currentTemperature }, state{ false }, room{ new Room(currentTemperature) }
-{
-}
-
 Conditioner::Conditioner(Room& room) : temperature{ room.temperature }, state{ false }, room{ &room }
 {
 }
@@ -30,7 +22,6 @@ void Conditioner::setTemperature(int temperature)
 		{
 			while (this->room->getTemperature() != temperature)
 			{
-				//this->room.increaseTemperature();
 				this->temperature = temperature;
 				this->room->temperature++;
 				std::cout << "Temperature: " << this->room->getTemperature() << "\n";
@@ -40,7 +31,6 @@ void Conditioner::setTemperature(int temperature)
 		{
 			while (this->room->getTemperature() != temperature)
 			{
-				//this->room.decreaseTemperature();
 				this->temperature = temperature;
 				this->room->temperature--;
 				std::cout << "Temperature: " << this->room->getTemperature() << "\n";
@@ -48,4 +38,5 @@ void Conditioner::setTemperature(int temperature)
 		}
 	}
 }
+
 

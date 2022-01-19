@@ -4,7 +4,6 @@
 int main()
 {
     RemoteControl r;
-    //Conditioner c(45);
     Room room(34);
     {
         Conditioner c(room);

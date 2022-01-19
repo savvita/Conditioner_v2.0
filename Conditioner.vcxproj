@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="Conditioner.cpp" />
     <ClCompile Include="RemoteControl.cpp" />
-    <ClCompile Include="Room.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include "Room.h"
+
 class Conditioner
 {
 private:
@@ -9,8 +10,6 @@ private:
 	Room* room;
 
 public:
-	Conditioner();
-	explicit Conditioner(int currentTemperature);
 	explicit Conditioner(Room& room);
 
 	void turnOn();

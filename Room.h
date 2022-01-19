@@ -8,16 +8,15 @@ private:
 	int temperature;
 
 public:
-	explicit Room(int temperature);
-	explicit Room(const Room& room);
+	explicit Room(int temperature) :temperature{ temperature }
+	{
+
+	}
 
 	inline int getTemperature() const
 	{
 		return this->temperature;
 	}
-
-	//void increaseTemperature();
-	//void decreaseTemperature();
 
 	friend class Conditioner;
 };
